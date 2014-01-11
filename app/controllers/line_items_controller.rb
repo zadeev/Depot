@@ -32,7 +32,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_path }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
@@ -66,7 +66,7 @@ class LineItemsController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { redirect_to cart_path(session[:cart_id]) }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
