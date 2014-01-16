@@ -67,7 +67,7 @@ class LineItemsController < ApplicationController
     end
     
     respond_to do |format|
-      format.html { redirect_to :back }
+      format.html { redirect_to line_items_path }
       format.js   { @current_item = @line_item }
       format.json { head :no_content }
     end
